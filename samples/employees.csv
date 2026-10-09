@@ -1,0 +1,9 @@
+id,name,role,department,salary,status
+1,Adams Romeo,Lead Systems Architect,Engineering,$145000,Active
+2,Sarah Jenkins,AI Research Scientist,Machine Learning,$160000,Active
+3,Michael Chen,Full-Stack Engineer,Frontend,$120000,On Leave
+4,Elena Rostova,Security Engineer,DevOps,$135000,Active
+5,David Kim,Data Analyst,Business Intelligence,$98000,Active
+6,Jessica Taylor,Product Manager,Product,$140000,Active
+7,Marcus Brody,UX Designer,Design,$110000,Active
+8,Anita Patel,QA Automation Lead,Engineering,$115000,Active

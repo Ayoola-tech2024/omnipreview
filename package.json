@@ -1,0 +1,118 @@
+{
+  "name": "omnipreview",
+  "displayName": "OmniPreview — Universal File, PDF & Media Viewer",
+  "description": "Natively open and play PDFs, MP4s, AAC, Word docs, Excel spreadsheets, CSVs and audio inside Antigravity and VS Code without encoding errors.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "publisher": "omnipreview",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omnipreview/omnipreview"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization",
+    "Data Science",
+    "Formatters"
+  ],
+  "keywords": [
+    "pdf viewer",
+    "mp4 player",
+    "csv viewer",
+    "excel viewer",
+    "docx viewer",
+    "media player",
+    "universal preview"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "omnipreview.pdfViewer",
+        "displayName": "OmniPreview: PDF Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.pdf"
+          }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "omnipreview.mediaViewer",
+        "displayName": "OmniPreview: Media Player",
+        "selector": [
+          { "filenamePattern": "*.mp4" },
+          { "filenamePattern": "*.webm" },
+          { "filenamePattern": "*.mov" },
+          { "filenamePattern": "*.mkv" },
+          { "filenamePattern": "*.mp3" },
+          { "filenamePattern": "*.aac" },
+          { "filenamePattern": "*.wav" },
+          { "filenamePattern": "*.ogg" },
+          { "filenamePattern": "*.flac" },
+          { "filenamePattern": "*.m4a" }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "omnipreview.dataViewer",
+        "displayName": "OmniPreview: Data & Spreadsheet Viewer",
+        "selector": [
+          { "filenamePattern": "*.csv" },
+          { "filenamePattern": "*.tsv" },
+          { "filenamePattern": "*.xlsx" },
+          { "filenamePattern": "*.xls" }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "omnipreview.docViewer",
+        "displayName": "OmniPreview: Word Document Viewer",
+        "selector": [
+          { "filenamePattern": "*.docx" }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "omnipreview.xmlViewer",
+        "displayName": "OmniPreview: XML Tree Viewer",
+        "selector": [
+          { "filenamePattern": "*.xml" }
+        ],
+        "priority": "option"
+      }
+    ],
+    "commands": [
+      {
+        "command": "omnipreview.openWithOmniPreview",
+        "title": "Open with OmniPreview"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "build": "node esbuild.js",
+    "package": "npx @vscode/vsce package --no-dependencies"
+  },
+  "dependencies": {
+    "chardet": "^2.0.0",
+    "docx-preview": "^0.3.3",
+    "papaparse": "^5.4.1",
+    "pdfjs-dist": "^3.11.174",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/chardet": "^0.8.0",
+    "@types/node": "^20.11.0",
+    "@types/papaparse": "^5.3.14",
+    "@types/vscode": "^1.80.0",
+    "@vscode/vsce": "^2.24.0",
+    "esbuild": "^0.20.0",
+    "typescript": "^5.3.3"
+  }
+}

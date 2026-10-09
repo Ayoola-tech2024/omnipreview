@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration version="2.4" environment="production">
+  <!-- Application Core Settings -->
+  <server id="srv-01" region="us-east-1" active="true">
+    <host>api.omnipreview.dev</host>
+    <port ssl="true">443</port>
+    <rateLimit maxRequests="1000" windowSeconds="60" />
+    <endpoints>
+      <endpoint path="/v1/pdf/render" authRequired="true" cache="60s" />
+      <endpoint path="/v1/media/stream" authRequired="false" cache="3600s" />
+      <endpoint path="/v1/data/extract" authRequired="true" cache="0" />
+    </endpoints>
+  </server>
+  
+  <integrations>
+    <plugin name="Antigravity 2.0" enabled="true" version="2.4.0" />
+    <plugin name="VS Code Extension Host" enabled="true" version="1.85.0" />
+    <plugin name="Cursor IDE Agent" enabled="true" version="0.40.0" />
+  </integrations>
+</configuration>
